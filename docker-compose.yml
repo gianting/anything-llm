@@ -1,0 +1,56 @@
+version: '3.8'
+services:
+  server:
+    build:
+      context: ./server
+    working_dir: /app
+    volumes:
+      - ./server:/app
+    command: yarn dev
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    command: yarn dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - server
+
+  collector:
+    build:
+      context: ./collector
+    working_dir: /app
+    volumes:
+      - ./collector:/app
+    command: yarn dev
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=development
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: anythingllm
+      POSTGRES_PASSWORD: anythingllm
+      POSTGRES_DB: anythingllm
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
