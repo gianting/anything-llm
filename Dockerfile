@@ -22,7 +22,8 @@ COPY . .
 
 # 分步執行指令，第三步：建置前端
 # 我們使用 --verbose 來取得更詳細的錯誤輸出
-RUN npm run build:frontend --verbose
+# RUN npm run build:frontend --verbose
+RUN npm run prod:frontend --verbose
 
 # 宣告服務使用的連接埠
 EXPOSE 3001
