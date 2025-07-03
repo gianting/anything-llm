@@ -1,42 +1,32 @@
-# =================================================================
-# Final Dockerfile for AnythingLLM on Zeabur
-# This version downloads a pre-built frontend to bypass local build issues.
-# =================================================================
+# 使用一個更完整的 Node.js 18 映像檔，避免缺少系統工具
+FROM node:18
 
-# Part 1: Build the backend in a builder stage
-# ---------------------------------------------
-FROM node:18-slim AS builder
+# 設定環境變數，這對後續所有 npm 指令都有效
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 
+# 建立工作目錄
 WORKDIR /app
 
-# Copy only necessary files for backend dependencies
+# 先複製所有 package.json 檔案，以利用快取
 COPY package*.json ./
+COPY frontend/package*.json ./frontend/
 
-# Install backend dependencies
-RUN npm install --omit=dev
+# 分步執行指令，第一步：安裝根目錄的依賴
+RUN npm install
 
-# Part 2: Create the final image
-# ---------------------------------------------
-FROM node:18-slim
+# 分步執行指令，第二步：安裝前端的依賴
+RUN npm install --prefix frontend
 
-WORKDIR /app
-
-# Copy backend dependencies from the builder stage
-COPY --from=builder /app/node_modules ./node_modules
-
-# Copy your backend server code and other root files
+# 現在複製所有剩餘的程式碼
 COPY . .
 
-# --- THE MAGIC PART ---
-# Remove your local (broken) frontend and download the official pre-built one
-RUN rm -rf ./frontend && \
-    curl -L -o anythingllm-frontend.zip https://github.com/Mintplex-Labs/anything-llm/releases/latest/download/anythingllm-frontend.zip && \
-    unzip anythingllm-frontend.zip && \
-    rm anythingllm-frontend.zip
-# --- END OF MAGIC PART ---
+# 分步執行指令，第三步：建置前端
+# 我們使用 --verbose 來取得更詳細的錯誤輸出
+# RUN npm run build:frontend --verbose
+RUN npm run prod:frontend --verbose
 
-# Expose the port the app runs on
+# 宣告服務使用的連接埠
 EXPOSE 3001
 
-# The command to start the application
+# 最終的啟動指令
 CMD ["sh", "-c", "NODE_ENV=production npx tsx-esm server/index.ts"]
