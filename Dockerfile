@@ -10,8 +10,8 @@ COPY package*.json ./
 COPY frontend/package*.json ./frontend/
 
 # 執行我們的設定指令，這會安裝所有依賴並建置前端
-# 這就是之前的 buildCommand
-RUN npm run setup
+# *** 這就是我們修改的地方！***
+RUN NODE_OPTIONS="--max-old-space-size=4096" npm run setup
 
 # 複製專案的所有剩餘檔案到工作目錄
 COPY . .
@@ -20,5 +20,4 @@ COPY . .
 EXPOSE 3001
 
 # 容器啟動時要執行的最終指令
-# 這就是之前的 startCommand
 CMD ["sh", "-c", "NODE_ENV=production npx tsx-esm server/index.ts"]
