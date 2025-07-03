@@ -3,6 +3,6 @@
     "buildCommand": "npm run setup"
   },
   "start": {
-    "startCommand": "npm run start"
+    "startCommand": "NODE_ENV=production npx tsx-esm server/index.ts"
   }
 }
