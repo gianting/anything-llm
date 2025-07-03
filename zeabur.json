@@ -3,6 +3,6 @@
     "buildCommand": "npm run setup"
   },
   "start": {
-    "startCommand": "npm run start:prod"
+    "startCommand": "npm run start"
   }
 }
