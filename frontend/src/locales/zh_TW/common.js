@@ -878,7 +878,7 @@ const TRANSLATIONS = {
       createWorkspace: "建立工作空間",
     },
     exploreMore: {
-      title: "探索更多功能",
+      title: "探索更多功能2025",
       features: {
         customAgents: {
           title: "自定義AI代理",
