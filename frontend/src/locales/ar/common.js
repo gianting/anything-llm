@@ -249,6 +249,8 @@ const TRANSLATIONS = {
       query: "استعلام",
       "desc-end":
         "وضعٍية ترغب في إرجاع رفض آخر مناسب عندما لا يتم العثور على السياق.",
+      "tooltip-title": null,
+      "tooltip-description": null,
     },
     temperature: {
       title: "حرارة نموذج التعلم العميق",
@@ -729,7 +731,7 @@ const TRANSLATIONS = {
     username: null,
     username_description: null,
     new_password: null,
-    passwort_description: null,
+    password_description: null,
     cancel: null,
     update_account: null,
     theme: null,

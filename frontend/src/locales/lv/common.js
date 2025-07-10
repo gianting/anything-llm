@@ -334,6 +334,8 @@ const TRANSLATIONS = {
       query: "vaicājuma",
       "desc-end":
         "režīmā, jūs varētu vēlēties atgriezt pielāgotu atteikuma atbildi, kad konteksts nav atrasts.",
+      "tooltip-title": null,
+      "tooltip-description": null,
     },
     temperature: {
       title: "LLM Temperatūra",
@@ -955,7 +957,7 @@ const TRANSLATIONS = {
     username_description:
       "Lietotājvārdam jāsatur tikai mazie burti, cipari, pasvītrojumi un defises bez atstarpēm",
     new_password: "Jauna parole",
-    passwort_description: "Parolei jābūt vismaz 8 rakstzīmes garai",
+    password_description: "Parolei jābūt vismaz 8 rakstzīmes garai",
     cancel: "Atcelt",
     update_account: "Atjaunināt kontu",
     theme: "Tēmas preference",

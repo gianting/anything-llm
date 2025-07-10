@@ -348,6 +348,9 @@ const TRANSLATIONS = {
       query: "query",
       "desc-end":
         "mode, you may want to return a custom refusal response when no context is found.",
+      "tooltip-title": "Why am I seeing this?",
+      "tooltip-description":
+        "You are in query mode, which only uses information from your documents. Switch to chat mode for more flexible conversations, or click here to visit our documentation to learn more about chat modes.",
     },
     temperature: {
       title: "LLM Temperature",
@@ -999,7 +1002,7 @@ const TRANSLATIONS = {
     username_description:
       "Username must be only contain lowercase letters, numbers, underscores, and hyphens with no spaces",
     new_password: "New Password",
-    passwort_description: "Password must be at least 8 characters long",
+    password_description: "Password must be at least 8 characters long",
     cancel: "Cancel",
     update_account: "Update Account",
     theme: "Theme Preference",

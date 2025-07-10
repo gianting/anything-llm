@@ -244,6 +244,8 @@ const TRANSLATIONS = {
       query: "consulta",
       "desc-end":
         "modo, es posible que desees devolver una respuesta de rechazo personalizada cuando no se encuentre contexto.",
+      "tooltip-title": null,
+      "tooltip-description": null,
     },
     temperature: {
       title: "Temperatura de LLM",
@@ -728,7 +730,7 @@ const TRANSLATIONS = {
     username: null,
     username_description: null,
     new_password: null,
-    passwort_description: null,
+    password_description: null,
     cancel: null,
     update_account: null,
     theme: null,

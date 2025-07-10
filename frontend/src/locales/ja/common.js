@@ -249,6 +249,8 @@ const TRANSLATIONS = {
       query: "クエリ",
       "desc-end":
         "の場合、コンテキストが見つからないときにカスタム拒否応答を返すことができます。",
+      "tooltip-title": null,
+      "tooltip-description": null,
     },
     temperature: {
       title: "LLM温度",
@@ -760,7 +762,7 @@ const TRANSLATIONS = {
     username_description:
       "ユーザー名は小文字の英字、数字、アンダースコア、ハイフンのみ使用でき、スペースは使えません",
     new_password: "新しいパスワード",
-    passwort_description: "パスワードは8文字以上である必要があります",
+    password_description: "パスワードは8文字以上である必要があります",
     cancel: "キャンセル",
     update_account: "アカウントを更新",
     theme: "テーマ設定",

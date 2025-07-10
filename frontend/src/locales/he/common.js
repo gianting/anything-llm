@@ -238,6 +238,8 @@ const TRANSLATIONS = {
       query: "שאילתה",
       "desc-end":
         "אתה עשוי לרצות להחזיר תגובת סירוב מותאמת אישית כאשר לא נמצא הקשר.",
+      "tooltip-title": null,
+      "tooltip-description": null,
     },
     temperature: {
       title: "טמפרטורה של LLM",
@@ -714,7 +716,7 @@ const TRANSLATIONS = {
     username: null,
     username_description: null,
     new_password: null,
-    passwort_description: null,
+    password_description: null,
     cancel: null,
     update_account: null,
     theme: null,

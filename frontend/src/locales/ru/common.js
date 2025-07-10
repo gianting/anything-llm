@@ -251,6 +251,8 @@ const TRANSLATIONS = {
       query: "запроса",
       "desc-end":
         "вы можете вернуть пользовательский ответ об отказе, если контекст не найден.",
+      "tooltip-title": null,
+      "tooltip-description": null,
     },
     temperature: {
       title: "Температура LLM",
@@ -769,7 +771,7 @@ const TRANSLATIONS = {
     username_description:
       "Имя пользователя должно состоять только из строчных букв, цифр, символов подчеркивания и дефисов без пробелов",
     new_password: "Новый пароль",
-    passwort_description: "Пароль должен содержать не менее 8 символов",
+    password_description: "Пароль должен содержать не менее 8 символов",
     cancel: "Отмена",
     update_account: "Обновить учётную запись",
     theme: "Предпочтения темы",
