@@ -834,7 +834,7 @@ const TRANSLATIONS = {
   "main-page": {
     noWorkspaceError: "請先建立工作空間才能開始對話。",
     checklist: {
-      title: "開始使用gianting的AnythingLLM",
+      title: "開始使用 Austin 的AnythingLLM",
       tasksLeft: "個任務未完成",
       completed: "你已經走在成為AnythingLLM專家的路上！",
       dismiss: "關閉",
